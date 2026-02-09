@@ -1,0 +1,22 @@
+Given an integer array nums, return an array output where output[i] is the product of all the elements of nums except nums[i].
+
+Input: nums = [1,2,4,6]
+Output: [48,24,12,8]
+
+
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        output = []
+
+        for i in range(n):
+            product = 1
+
+            for j in range(n):
+                if i!=j:
+                    product *= nums[j]
+
+            output.append(product)
+
+        return output
